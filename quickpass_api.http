@@ -1,0 +1,9 @@
+@quickpass_api_HostAddress = http://localhost:5111
+
+GET {{quickpass_api_HostAddress}}/api/test
+Accept: application/json
+
+###
+
+GET {{{{quickpass_api_HostAddress}}}}
+Accept: application/json
