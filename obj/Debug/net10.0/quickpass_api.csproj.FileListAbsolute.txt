@@ -40,3 +40,4 @@ C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\refint\quick
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\quickpass_api.pdb
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\quickpass_api.genruntimeconfig.cache
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\ref\quickpass_api.dll
+C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\quickpass_api.sourcelink.json

@@ -15,6 +15,10 @@ public class QuickPassContext : DbContext
 
     public DbSet<Rol> Roles => Set<Rol>();
 
+    public DbSet<Evento> Eventos => Set<Evento>();
+
+    public DbSet<Slot> Slots => Set<Slot>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
        modelBuilder.Entity<Usuario>().ToTable("usuarios");
@@ -30,5 +34,9 @@ public class QuickPassContext : DbContext
        modelBuilder.Entity<Usuario>().HasOne(u => u.Rol).WithMany(r =>  r.Usuarios).HasForeignKey(u => u.RolId);
        
        modelBuilder.Entity<Usuario>().Property(u => u.Password).HasColumnName("Password");
+
+       modelBuilder.Entity<Evento>().HasOne<Usuario>().WithMany().HasForeignKey(e => e.IdAdministrador);
+
+       modelBuilder.Entity<Slot>().HasOne(s => s.Evento).WithMany(e => e.Slots).HasForeignKey(s => s.IdEvento);
     }
 }
