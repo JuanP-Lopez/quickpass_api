@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("quickpass_api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7c64160f39ef12fd4d42879fc022ac8377a4745")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8144b9ff9bf35013ffe215544b74e44a524a9ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("quickpass_api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("quickpass_api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
