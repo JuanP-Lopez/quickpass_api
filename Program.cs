@@ -8,10 +8,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+Console.WriteLine("===== CONNECTION STRING =====");
+Console.WriteLine(connectionString);
+Console.WriteLine("=============================");
+
 builder.Services.AddDbContext<QuickPassContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
+    options.UseNpgsql(connectionString));
 
 builder.Services.AddCors(options =>
 {
