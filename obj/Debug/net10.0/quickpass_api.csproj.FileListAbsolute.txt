@@ -7,7 +7,6 @@ C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\quickpass_ap
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\quickpass_api.dll
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\quickpass_api.pdb
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\BCrypt-Net-Next.dll
-C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
@@ -41,3 +40,9 @@ C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\quickpass_ap
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\quickpass_api.genruntimeconfig.cache
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\ref\quickpass_api.dll
 C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\obj\Debug\net10.0\quickpass_api.sourcelink.json
+C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\out\web.config
+C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\out\appsettings.Development.json
+C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\out\appsettings.json
+C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\out\quickpass_api.deps.json
+C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\out\quickpass_api.runtimeconfig.json
+C:\Users\lopez\Escritorio\QUICKPASS\quickpass_api\bin\Debug\net10.0\out\quickpass_api.staticwebassets.endpoints.json

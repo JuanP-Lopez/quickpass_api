@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "i0yWkVYwimQ=",
+  "dgSpecHash": "1PhIr4DZJEA=",
   "success": true,
   "projectFilePath": "C:\\Users\\lopez\\Escritorio\\QUICKPASS\\quickpass_api\\quickpass_api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lopez\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
-    "C:\\Users\\lopez\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
     "C:\\Users\\lopez\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.9\\microsoft.entityframeworkcore.10.0.9.nupkg.sha512",
     "C:\\Users\\lopez\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.9\\microsoft.entityframeworkcore.abstractions.10.0.9.nupkg.sha512",
     "C:\\Users\\lopez\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.9\\microsoft.entityframeworkcore.analyzers.10.0.9.nupkg.sha512",
