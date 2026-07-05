@@ -1,6 +1,6 @@
-namespace Quickpass.Api.Models;
+namespace Quickpass.Api.DTOs;
 
-public class Evento
+public class EventoResponse
 {
     public int Id { get; set; }
     public string Nombre { get; set; } = "";
@@ -8,7 +8,4 @@ public class Evento
     public DateOnly Fecha { get; set; }
     public TimeOnly Hora_Inicio { get; set; }
     public TimeOnly Hora_Final { get; set; }
-    public int Id_Administrador { get; set; }
-    public ICollection<Slot> Slots { get; set; } = [];
-
 }

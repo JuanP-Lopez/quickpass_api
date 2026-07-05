@@ -6,12 +6,12 @@ namespace Quickpass.Api.Data;
 
 public class QuickPassContext : DbContext
 {
-    public QuickPassContext( DbContextOptions<QuickPassContext> options ) : base(options)
+    public QuickPassContext(DbContextOptions<QuickPassContext> options) : base(options)
     {
-        
+
     }
 
-    public DbSet<Usuario> Usuarios  => Set<Usuario>();
+    public DbSet<Usuario> Usuarios => Set<Usuario>();
 
     public DbSet<Rol> Roles => Set<Rol>();
 
@@ -21,22 +21,26 @@ public class QuickPassContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-       modelBuilder.Entity<Usuario>().ToTable("usuarios");
-       
-       modelBuilder.Entity<Rol>(entity =>
-       {
-           entity.ToTable("roles");
-           entity.HasKey(r => r.Id);
-           entity.Property(r => r.Id).HasColumnName("Id");
-           entity.Property(r => r.RolNombre).HasColumnName("Rol");
-       });
+        modelBuilder.Entity<Usuario>().ToTable("usuarios");
 
-       modelBuilder.Entity<Usuario>().HasOne(u => u.Rol).WithMany(r =>  r.Usuarios).HasForeignKey(u => u.RolId);
-       
-       modelBuilder.Entity<Usuario>().Property(u => u.Password).HasColumnName("Password");
+        modelBuilder.Entity<Rol>(entity =>
+        {
+            entity.ToTable("roles");
+            entity.HasKey(r => r.Id);
+            entity.Property(r => r.Id).HasColumnName("Id");
+            entity.Property(r => r.RolNombre).HasColumnName("Rol");
+        });
 
-       modelBuilder.Entity<Evento>().HasOne<Usuario>().WithMany().HasForeignKey(e => e.IdAdministrador);
+        modelBuilder.Entity<Evento>().ToTable("eventos");
 
-       modelBuilder.Entity<Slot>().HasOne(s => s.Evento).WithMany(e => e.Slots).HasForeignKey(s => s.IdEvento);
+        modelBuilder.Entity<Slot>().ToTable("slots");
+
+        modelBuilder.Entity<Usuario>().HasOne(u => u.Rol).WithMany(r => r.Usuarios).HasForeignKey(u => u.RolId);
+
+        modelBuilder.Entity<Usuario>().Property(u => u.Password).HasColumnName("Password");
+
+        modelBuilder.Entity<Evento>().HasOne<Usuario>().WithMany().HasForeignKey(e => e.Id_Administrador);
+
+        modelBuilder.Entity<Slot>().HasOne(s => s.Evento).WithMany(e => e.Slots).HasForeignKey(s => s.id_evento);
     }
 }

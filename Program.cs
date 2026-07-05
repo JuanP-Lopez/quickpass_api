@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Quickpass.Api.Data;
+using Quickpass.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ Console.WriteLine("=============================");
 
 builder.Services.AddDbContext<QuickPassContext>(options =>
     options.UseNpgsql(connectionString));
+
+builder.Services.AddScoped<IEventoService, EventoService>();
 
 builder.Services.AddCors(options =>
 {
