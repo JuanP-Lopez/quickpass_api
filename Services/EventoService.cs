@@ -107,8 +107,72 @@ public class EventoService : IEventoService
                 Descripcion = e.Descripcion,
                 Fecha = e.Fecha,
                 Hora_Inicio = e.Hora_Inicio,
-                Hora_Final = e.Hora_Final
+                Hora_Final = e.Hora_Final,
+                SlotsDisponibles = e.Slots.Count(s => s.estado == "Disponible")
             })
             .ToListAsync();
+    }
+
+    public async Task<List<EventoResponse>> ObtenerEventos()
+    {
+        Console.WriteLine("Eventos consultados");
+
+        var total = await _context.Eventos.CountAsync();
+        Console.WriteLine($"Eventos: {total}");
+
+        // return await _context.Eventos
+        //     .Select(e => new EventoResponse
+        //     {
+        //         Id = e.Id,
+        //         Nombre = e.Nombre
+        //     })
+        //     .ToListAsync();
+
+        return await _context.Eventos
+        .OrderBy(e => e.Fecha)
+        .ThenBy(e => e.Hora_Inicio)
+        .Select(e => new EventoResponse
+        {
+            Id = e.Id,
+            Nombre = e.Nombre,
+            Descripcion = e.Descripcion,
+            Fecha = e.Fecha,
+            Hora_Inicio = e.Hora_Inicio,
+            Hora_Final = e.Hora_Final,
+            SlotsDisponibles = e.Slots.Count(s => s.estado == "Disponible")
+        })
+        .ToListAsync();
+    }
+
+    public async Task<EventoDetallesResponse> ObtenerEventoPorId(int idEvento)
+    {
+        var evento = await _context.Eventos.Include(e => e.Slots).FirstOrDefaultAsync(e => e.Id == idEvento);
+
+        if (evento == null)
+        {
+            return null;
+        }
+
+        return new EventoDetallesResponse
+        {
+          Id = evento.Id,
+          Nombre = evento.Nombre,
+          Descripcion = evento.Descripcion,
+          Fecha = evento.Fecha,
+          Hora_Inicio = evento.Hora_Inicio,
+          Hora_Final = evento.Hora_Final,
+
+          SlotsDisponibles = evento.Slots.Count(s => s.estado == "Disponible"),
+
+          Slots = evento.Slots.OrderBy(s => s.hora_inicio)
+            .Select(s => new SlotResponse
+            {
+                Id = s.id,
+                Hora_Inicio = s.hora_inicio,
+                Hora_Final = s.hora_final,
+                Estado = s.estado
+            })
+            .ToList()
+        };
     }
 }

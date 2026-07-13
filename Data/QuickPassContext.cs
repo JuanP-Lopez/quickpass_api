@@ -42,5 +42,7 @@ public class QuickPassContext : DbContext
         modelBuilder.Entity<Evento>().HasOne<Usuario>().WithMany().HasForeignKey(e => e.Id_Administrador);
 
         modelBuilder.Entity<Slot>().HasOne(s => s.Evento).WithMany(e => e.Slots).HasForeignKey(s => s.id_evento);
+        
+        modelBuilder.Entity<Slot>().HasOne(s => s.usuario).WithMany().HasForeignKey(s => s.Id_Usuario).OnDelete(DeleteBehavior.SetNull);
     }
 }

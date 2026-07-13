@@ -1,6 +1,6 @@
 namespace Quickpass.Api.DTOs;
 
-public class EventoResponse
+public class EventoDetallesResponse
 {
     public int Id { get; set; }
 
@@ -15,4 +15,5 @@ public class EventoResponse
     public TimeOnly Hora_Final { get; set; }
 
     public int? SlotsDisponibles { get; set; }
+    public List<SlotResponse> Slots { get; set; }
 }

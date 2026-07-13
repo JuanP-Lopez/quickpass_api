@@ -8,5 +8,7 @@ public class Slot
     public string estado { get; set; } = "";
     public int id_evento { get; set; }
     public Evento? Evento { get; set; }
+    public int? Id_Usuario { get; set; }
+    public Usuario? usuario { get; set; }
 
 }

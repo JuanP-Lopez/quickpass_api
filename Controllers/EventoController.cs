@@ -36,7 +36,8 @@ public class EventoController : ControllerBase
 
         if (request?.Hora_Inicio > request?.Hora_Final)
         {
-            return BadRequest(new {
+            return BadRequest(new
+            {
                 mensaje = "La hora de inicio no puede ser despues de la hora final"
             });
         }
@@ -64,6 +65,29 @@ public class EventoController : ControllerBase
 
         var eventos = await _eventoService.ObtenerEventosAdministrador(id);
 
-        return Ok(eventos);   
+        return Ok(eventos);
+    }
+
+    [HttpGet("eventos")]
+    public async Task<IActionResult> ObtenerEventos()
+    {
+        Console.WriteLine("===== OBTENER TODOS LOS EVENTOS =====");
+        Console.WriteLine("Eventos consultados");
+        var eventos = await _eventoService.ObtenerEventos();
+
+        return Ok(eventos);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> ObtenerEvento(int id)
+    {
+        Console.WriteLine($"===== OBTENER EVENTO POR ID: {id} =====");
+        var evento = await _eventoService.ObtenerEventoPorId(id);
+
+        if (evento == null)
+        {
+            return NotFound();
+        }
+        return Ok(evento);
     }
 }

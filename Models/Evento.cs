@@ -9,6 +9,6 @@ public class Evento
     public TimeOnly Hora_Inicio { get; set; }
     public TimeOnly Hora_Final { get; set; }
     public int Id_Administrador { get; set; }
-    public ICollection<Slot> Slots { get; set; } = [];
+    public ICollection<Slot> Slots { get; set; } = new List<Slot>();
 
 }
