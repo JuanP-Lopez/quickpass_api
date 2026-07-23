@@ -19,6 +19,7 @@ builder.Services.AddDbContext<QuickPassContext>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddScoped<IEventoService, EventoService>();
+builder.Services.AddScoped<ISlotService, SlotService>();
 
 builder.Services.AddCors(options =>
 {
