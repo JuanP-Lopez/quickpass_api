@@ -58,4 +58,30 @@ public class SlotController : ControllerBase
 
         return Ok(solicitudes);
     }
+
+    [HttpPut("aceptar")]
+    public async Task<IActionResult> AceptarSlot([FromBody] ActualizarSlotRequest request){
+        var ok = await _slotService.AceptarSlot(request.IdSlot);
+
+        if (!ok)
+        {
+            return NotFound();
+        }
+
+        return Ok();
+    }
+
+    [HttpPut("rechazar")]
+    public async Task<IActionResult> RechazarSlot([FromBody] ActualizarSlotRequest request)
+    {
+        Console.WriteLine("===Ingresando rechazar turno===");
+        var ok = await _slotService.RechazarSlot(request.IdSlot);
+
+        if (!ok)
+        {
+            return NotFound();
+        }
+
+        return Ok();
+    }
 }

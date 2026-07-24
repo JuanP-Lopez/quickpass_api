@@ -89,4 +89,41 @@ public class SlotService : ISlotService
             )
             .ToListAsync();
     }
+
+    public async Task<bool> AceptarSlot (int IdSlot)
+    {
+        var slot = await _context.Slots.FirstOrDefaultAsync(
+            s => s.id == IdSlot
+        );
+
+        if (slot == null)
+        {
+            return false;
+        }
+
+        slot.estado = "Asignado";
+
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
+
+    public async Task<bool> RechazarSlot (int IdSlot)
+    {
+        var slot = await _context.Slots.FirstOrDefaultAsync(
+            s => s.id == IdSlot
+        );
+
+        if (slot == null)
+        {
+            return false;
+        }
+
+        slot.estado = "Disponible";
+        slot.Id_Usuario = null;
+
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
 }

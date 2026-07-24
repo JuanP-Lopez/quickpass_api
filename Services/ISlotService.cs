@@ -11,4 +11,8 @@ public interface ISlotService
 
     Task<List<SolicitudTurnoResponse>> ObtenerSolicitudes (int idAdministrador);
 
+    Task <bool> AceptarSlot (int IdSlot);
+
+    Task <bool> RechazarSlot (int IdSlot);
+
 }
